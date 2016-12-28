@@ -1,8 +1,10 @@
 var express = require("express"),
     // logger = require("morgan"),
+    routes = require("./routes"),
     bodyParser = require("body-parser");
 var PORT = process.env.PORT || 3000;
 var app = express();
+
 
 // app.use(logger);
 
@@ -11,11 +13,10 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-app.get('/', (req, res) => {
-    res.sendFile("/index.html", {
-        root: __dirname
-    });
-});
+app.use(express.static('public'));
+routes(app);
+
+
 
 app.listen(PORT, (err) => {
     if (err) {
