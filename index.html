@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app = "MyApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Swearthesaurus</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+
+  </head>
+  <body ng-controller = "MainCtrl as main">
+
+    {{ main.greeting }}
+
+
+    <ul ng-repeat = "item in main.newData">
+      <li> {{ item.data }}</li>
+
+    </ul>
+
+
+    <script type="text/javascript" src = "module.js"></script>
+    <script type="text/javascript" src = "myFactory.js"></script>
+    <script type="text/javascript" src = "myScripts.js"></script>
+  </body>
+</html>
