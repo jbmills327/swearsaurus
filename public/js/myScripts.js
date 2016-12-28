@@ -14,13 +14,25 @@ $routeProvider
   .when("/pirate", {
     templateUrl: "./html/pirate.html"
   })
+  .when("/gentleman", {
+    templateUrl: "./html/gentleman.html"
+  })
+  .when("/mythology", {
+    templateUrl: "./html/mythology.html"
+  })
+  .when("/robot", {
+    templateUrl: "./html/robot.html"
+  })
 
 }
 
 function mainController($http) {
     var main = this;
     main.greeting = "What up yo?";
-    main.pirate = "Here there be pirates!"
+    main.pirate = "Here there be pirates!";
+    main.robot = "This is the robot page";
+    main.gentleman = "This is the gentleman page";
+    main.mythology = "This is the Mythology page";
     main.newData = [];
 
     // main.getAllWords = function() {
