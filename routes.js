@@ -1,4 +1,5 @@
-var express = require("express");
+var express = require("express"),
+    API = require("./words.js");
 var app = express();
 
 module.exports = (app) => {
@@ -8,6 +9,10 @@ module.exports = (app) => {
             root: "./public/html"
         });
     });
+
+    app.get("/api/words", (req, res) => {
+        res.send(API);
+    })
 
     // app.get("/pirate", (req, res) => {
     //     res.sendFile("pirate.html", {

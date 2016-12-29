@@ -9,20 +9,20 @@ mainController.$inject = ["$http"];
 myRouter.$inject = ["$routeProvider"];
 
 
-function myRouter($routeProvider){
-$routeProvider
-  .when("/pirate", {
-    templateUrl: "./html/pirate.html"
-  })
-  .when("/gentleman", {
-    templateUrl: "./html/gentleman.html"
-  })
-  .when("/mythology", {
-    templateUrl: "./html/mythology.html"
-  })
-  .when("/robot", {
-    templateUrl: "./html/robot.html"
-  })
+function myRouter($routeProvider) {
+    $routeProvider
+        .when("/pirate", {
+            templateUrl: "./html/pirate.html"
+        })
+        .when("/gentleman", {
+            templateUrl: "./html/gentleman.html"
+        })
+        .when("/mythology", {
+            templateUrl: "./html/mythology.html"
+        })
+        .when("/robot", {
+            templateUrl: "./html/robot.html"
+        })
 
 }
 
@@ -50,12 +50,10 @@ function mainController($http) {
     // main.getAllWords();
 
     main.getAllTheWords = function() {
-        $http.get("/words.json", {
-                root: "./js"
-            })
+        $http.get("/api/words")
             .then(function(res) {
                 console.log(res.data);
-                main.newData = res.data;
+                main.newData = res.data[0];
             })
     }
 
