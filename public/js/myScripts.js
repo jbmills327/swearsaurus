@@ -53,7 +53,7 @@ function mainController($http) {
         $http.get("/api/words")
             .then(function(res) {
                 console.log(res.data);
-                main.newData = res.data[0];
+                main.newData = res.data;
             })
     }
 
